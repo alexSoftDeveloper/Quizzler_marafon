@@ -38,7 +38,6 @@ class ViewController: UIViewController {
         let userAnswer = sender.currentTitle
         let actualAnswer = quiz[numderQuestion].answer
         
-        
         if userAnswer == actualAnswer {
             sender.backgroundColor = UIColor.green
         } else {
@@ -54,13 +53,11 @@ class ViewController: UIViewController {
         
     }
     
-    
-    
     @objc func updateUI() {
         questionLabel.text = quiz[numderQuestion].text
         trueButton.backgroundColor = UIColor.clear
         falseButton.backgroundColor = UIColor.clear
-        
+        progressBar.progress = Float(numderQuestion)/Float(quiz.count)
     }
     
 }
